@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-image: url(./image/sunset.jpg);
+  color: white;
+}
+.todoSection {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #020202;
+  font-weight: bold;
+  > .todolistContainer {
+    width: 400px;
+    height: 500px;
+    background: white;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px #333, 0 0 10px #333 inset;
+    border-radius: 10px;
+    padding: 20px;
+    > .todoHeader {
+      > h1 {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+        color: lightskyblue;
+      }
+    }
+    > .todoBody {
+      > .todoInput {
+        margin-bottom: 40px;
+        > form {
+          > input {
+            width: 80%;
+            padding: 8px;
+            border-radius: 6px;
+            &:focus {
+              background: lightgray;
+              font-weight: bold;
+            }
+            &:hover {
+              background: lightgray;
+              transition: 1s;
+            }
+          }
+          > button {
+            width: 15%;
+            padding: 7px;
+            border: none;
+            background: lightskyblue;
+            color: white;
+            border-radius: 3px;
+            &:hover {
+              background: rgb(0, 0, 0);
+              cursor: pointer;
+              transition: 1s;
+            }
+          }
+        }
+      }
+      > .todoList {
+        > #todoList {
+          list-style: none;
+          > .list {
+            display: flex;
+            border-bottom: 1px solid #333;
+            align-items: center;
+            padding: 10px 0;
+            > .todoText {
+              &.completed {
+                text-decoration: line-through;
+              }
+            }
+            > .todoCompelete {
+              margin-left: auto;
+              margin-right: 8px;
+              cursor: pointer;
+              padding: 8px;
+              width: 45px;
+              border-radius: 2px;
+              border: none;
+              background: lightgray;
+              &.disabled {
+                background: #ccc;
+                cursor: not-allowed;
+              }
+            }
+            > .todoDelete {
+              cursor: pointer;
+              padding: 8px;
+              background: #a00;
+              border-width: 0;
+              color: #fff;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
